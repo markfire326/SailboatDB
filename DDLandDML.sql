@@ -145,6 +145,7 @@ CREATE TABLE RepairHistory
 CREATE TABLE RepairFacility
 (
 	RepFacID NUMBER(5) CONSTRAINT RepairFacility PRIMARY KEY,
+	RepFacStreet VARCHAR2(50),
 	RepFacState CHAR(2),
 	RepFacCity VARCHAR2(50),
 	RepFacZip NUMBER(5)
