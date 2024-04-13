@@ -27,7 +27,7 @@ CREATE TABLE Boat
 	BoatID VARCHAR2(5) CONSTRAINT Boat_PK PRIMARY KEY,
 	OwnerID VARCHAR2(5),
 	BoatSize VARCHAR2(50),
-	BoatDimension NUMBER(25,2) CONSTRAINT BoatDim CHECK (BoatDimension BETWEEN 28 AND 44)
+	BoatDimension NUMBER(4,2) CONSTRAINT BoatDim CHECK (BoatDimension BETWEEN 28 AND 44)
 );
 
 CREATE TABLE BoatEquipment
@@ -35,7 +35,7 @@ CREATE TABLE BoatEquipment
 	BoatEquipmentID VARCHAR2(5) CONSTRAINT BoatEquipment_PK PRIMARY KEY,
 	BoatID VARCHAR2(5),
 	EquipmentID VARCHAR2(5),
-	UnitCost NUMBER(25,2) CONSTRAINT BoatEquipCost CHECK (UnitCost >= 0)
+	UnitCost NUMBER(15,2) CONSTRAINT BoatEquipCost CHECK (UnitCost >= 0)
 );
 
 CREATE TABLE Equipment
@@ -93,8 +93,8 @@ CREATE TABLE Supply
 CREATE TABLE SupplyCharter
 (
 	SupplyCharterID VARCHAR2(5) CONSTRAINT SupplyChart_PK PRIMARY KEY,
-	SupplyQty VARCHAR2(25),
-	UnitCost NUMBER(25,2) CONSTRAINT SupplyChartCost CHECK (UnitCost >= 0),
+	SupplyQty NUMBER(5),
+	UnitCost NUMBER(15,2) CONSTRAINT SupplyChartCost CHECK (UnitCost >= 0),
 	SupplyID VARCHAR2(5),
 	CharterID VARCHAR2(5)
 );
